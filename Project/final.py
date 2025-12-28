@@ -10,27 +10,32 @@ from custom_vehicle import CustomVehicleGenerator
 # different colors and width given their category 
 # (e.g., general lane, lane reserved for taxis, lane reserved for public
 # transport buses, etc.) and material (e.g., asphalt, concrete, gravel, dirt, etc)
+# custom_window.py achieves this.
 
 # Add the possibility to assign a “mnemonic” identifier (i.e., a string) to the
 # road segments, to simply their handling and usage during the topology
 # creation.
+# custom_window.py achieves this.
 
 # Define new topologies featuring multiple segments and intersections (e.g.,
 # a simplified modeling of the Scientific Campus of UNIPR, a small district
 # of a real existing city, etc.).
+# create_topology.py achieves this.
 
 # Include additional informations to be ideally managed by the OBUs present
 # on-board the vehicles (e.g., CO2 emissions, engine type (electric, 
 # combustion, hybrid, hydrogen, etc.), engine RPM, internal A/C temperature,
 # ambient light level, fog lights status, rain sensor detection, etc.).
-# Note: This would require updating the Vehicle class, which wasn't explicitly asked to be implemented fully yet, 
-# but we can add placeholders or attributes if needed. For now, focusing on topology and visualization.
+# custom_vehicle.py achieves this.
 
 # Define the possibility to show events (e.g., accidents, road construction
 # sites, etc.) happening at certain (randomly-selected and/or scheduled)
 # time instants and possibly (in the future) generating traffic congestion.
+# event_manager.py achieves this.
+
 # Moreover, a particular class to these obstacles would be wild animals,
 # which could randomly appear and decide to cross the road lane unexpectedly.
+# event_vehicle.py achieves this.
 
 vg = CustomVehicleGenerator({
     'vehicles': [

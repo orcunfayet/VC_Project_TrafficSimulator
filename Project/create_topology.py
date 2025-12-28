@@ -32,12 +32,5 @@ def create_golden_horn_track(sim):
     # Down Road
     create_quadratic_bezier_curve(sim, (-60, -55), (-6, -55), (-6, -40), category='general', name='Down Top') # 5 
     create_segment(sim, (-6, -40), (-6, 40), category='general', material='asphalt', name='Down Road') # 6
-    create_quadratic_bezier_curve(sim, (-6,40), (-6, 55), (-60, 55), category='general', name='Down Bottom') # 7 
-    
-    # create_quadratic_bezier_curve(sim, (-6, -40), (-6, -50), (-20, -50), category='general', name='Loop Leg 1') # 7
-    # create_quadratic_bezier_curve(sim, (-20, -50), (-30, -60), (0, -60), category='general', name='Loop Leg 2') # 8
-    # create_segment(sim, (0, -60), (60, -60), category='general', name='Loop Leg 3') # 9
-    # create_segment(sim, (60, 50), (80, 50), category='general', name='Road Top East') # 11
-    # create_segment(sim, (-80, -50), (-60, -50), category='general', name='Road Bottom West') # 12
-    # create_segment(sim, (60, -60), (80, -60), category='general', name='Road Bottom East') # 13
+    create_quadratic_bezier_curve(sim, (-6,40), (-6, 55), (-60, 55), category='general', name='Down Bottom') # 7
 
