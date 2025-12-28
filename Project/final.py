@@ -31,11 +31,7 @@ from custom_vehicle import CustomVehicleGenerator
 # Define the possibility to show events (e.g., accidents, road construction
 # sites, etc.) happening at certain (randomly-selected and/or scheduled)
 # time instants and possibly (in the future) generating traffic congestion.
-# event_manager.py achieves this.
-
-# Moreover, a particular class to these obstacles would be wild animals,
-# which could randomly appear and decide to cross the road lane unexpectedly.
-# event_vehicle.py achieves this.
+# event_manager.py and event_vehicle.py achieves this.
 
 vg = CustomVehicleGenerator({
     'vehicles': [

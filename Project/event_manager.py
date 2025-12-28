@@ -10,12 +10,12 @@ class EventManager:
         self.event_probability = 0.2 # 20% chance
 
     def update(self, dt):
-        # Remove expired events
+        # remove expired events
         expired_events = [e for e in self.events if e.time_elapsed >= e.duration]
         for e in expired_events:
             self.remove_event(e)
         
-        # Spawn new events
+        # spawn new events
         if self.simulation.t - self.last_event_time > self.event_interval:
             self.last_event_time = self.simulation.t
             if random.random() < self.event_probability:
@@ -25,7 +25,7 @@ class EventManager:
         if not self.simulation.segments:
             return
 
-        # Find eligible segments (exclude tram lines)
+        # find eligible segments (exclude tram lines)
         eligible_indices = [
             i for i, seg in enumerate(self.simulation.segments) 
             if getattr(seg, 'category', 'general') != 'tram'
@@ -34,15 +34,15 @@ class EventManager:
         if not eligible_indices:
             return
 
-        # Pick random segment
+        # pick random segment
         segment_id = random.choice(eligible_indices)
         segment = self.simulation.segments[segment_id]
         
-        # Pick random position
+        # pick random position
         length = segment.get_length()
         x = random.uniform(0, length)
         
-        # Create event vehicle
+        # create event vehicle
         event_type = random.choice(['accident', 'construction', 'animal'])
         duration = random.uniform(5, 15)
         

@@ -6,11 +6,11 @@ class EventVehicle(ts.Vehicle):
         super().__init__(config)
         self.event_type = config.get('event_type', 'accident')
         self.duration = config.get('duration', 10) # seconds
-        self.time_elapsed = 0
-        self.v = 0
+        self.time_elapsed = 0 
+        self.v = 0 #stopped
         self.stopped = True
-        
-        # Visual/OBU properties
+
+        #obu properties for window display
         self.engine_type = 'obstacle'
         self.co2_emissions = 0
         self.engine_rpm = 0
@@ -19,7 +19,7 @@ class EventVehicle(ts.Vehicle):
         self.windshield_wipers = False
 
     def update(self, lead, dt):
-        self.time_elapsed += dt
-        # Keep it stopped
+        self.time_elapsed += dt #duration of event
+        #keep it stopped
         self.v = 0
         self.a = 0
