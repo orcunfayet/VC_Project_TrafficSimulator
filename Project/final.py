@@ -10,7 +10,6 @@ from custom_vehicle import CustomVehicleGenerator
 # different colors and width given their category 
 # (e.g., general lane, lane reserved for taxis, lane reserved for public
 # transport buses, etc.) and material (e.g., asphalt, concrete, gravel, dirt, etc)
-# custom_window.py achieves this.
 
 # Add the possibility to assign a “mnemonic” identifier (i.e., a string) to the
 # road segments, to simply their handling and usage during the topology
@@ -25,6 +24,7 @@ from custom_vehicle import CustomVehicleGenerator
 #Introduce the possibility to define a “class” for the vehicles, then drawing
 #them with different color and/or shape on the basis of this additional
 #property (e.g., vehicle, truck, bus, military tank, electric vehicle, etc.).
+#custom_vehicle.py achieves this.
 
 # Include additional informations to be ideally managed by the OBUs present
 # on-board the vehicles (e.g., CO2 emissions, engine type (electric, 
