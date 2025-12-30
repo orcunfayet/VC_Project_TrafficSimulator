@@ -25,11 +25,11 @@ class CustomWindow(ts.Window):
             color = (180, 180, 220) 
             thickness = 3.5 * self.zoom
             
-            # Retrieve attributes if they exist (added via helper functions)
+            # Retrieve attributes
             material = getattr(segment, 'material', 'asphalt')
             category = getattr(segment, 'category', 'general')
 
-            # Material Colors (Base)
+            # Material
             if material == 'asphalt':
                 color = (20, 20, 20) #black
             elif material == 'concrete':
@@ -38,8 +38,8 @@ class CustomWindow(ts.Window):
                 color = (150, 50, 20) #light brown
             elif material == 'dirt':
                 color = (100, 50, 50) #dark brown
-            
-            # Category Overrides/Adjustments
+
+            # Category
             if category == 'tram':
                 color = (255, 215, 0) # Gold for tram line
                 thickness = 5.0 * self.zoom
@@ -87,9 +87,10 @@ class CustomWindow(ts.Window):
     def create_windows(self):
         super().create_windows()
         
-        # Add Vehicle Info header to ControlsWindow
+        # load OBU to visualize
         with dpg.collapsing_header(label="Vehicle Info", parent="ControlsWindow", default_open=True):
-            with dpg.table(tag="VehicleTable", header_row=True, borders_innerH=True, borders_outerH=True, borders_innerV=True, borders_outerV=True):
+            with dpg.table(tag="VehicleTable", header_row=True, borders_innerH=True,
+                            borders_outerH=True, borders_innerV=True, borders_outerV=True):
                 dpg.add_table_column(label="Engine")
                 dpg.add_table_column(label="AC Temp")
                 dpg.add_table_column(label="DRL")
@@ -97,8 +98,7 @@ class CustomWindow(ts.Window):
 
     def update_panels(self):
         super().update_panels()
-        
-        # Update Vehicle Table
+        # Update OBU Info
         if dpg.does_item_exist("VehicleTable"):
             # Clear existing rows (children of the table)
             dpg.delete_item("VehicleTable", children_only=True)

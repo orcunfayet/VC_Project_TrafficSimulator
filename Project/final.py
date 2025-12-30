@@ -21,10 +21,10 @@ from custom_vehicle import CustomVehicleGenerator
 # of a real existing city, etc.).
 # create_topology.py achieves this.
 
-#Introduce the possibility to define a “class” for the vehicles, then drawing
-#them with different color and/or shape on the basis of this additional
-#property (e.g., vehicle, truck, bus, military tank, electric vehicle, etc.).
-#custom_vehicle.py achieves this.
+# Introduce the possibility to define a “class” for the vehicles, then drawing
+# them with different color and/or shape on the basis of this additional
+# property (e.g., vehicle, truck, bus, military tank, electric vehicle, etc.).
+# custom_vehicle.py achieves this.
 
 # Include additional informations to be ideally managed by the OBUs present
 # on-board the vehicles (e.g., CO2 emissions, engine type (electric, 
@@ -51,4 +51,4 @@ create_golden_horn_track(sim)
 sim.add_vehicle_generator(vg)
 win = CustomWindow(sim)
 win.run()
-win.show()
+win.show() 
