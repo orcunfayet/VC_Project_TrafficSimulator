@@ -11,7 +11,7 @@ class EventVehicle(ts.Vehicle):
         self.stopped = True
 
         #obu properties for window display
-        self.engine_type = 'obstacle'
+        self.engine_type = config.get('event_type')
         self.co2_emissions = 0
         self.engine_rpm = 0
         self.ac_temperature = 0
