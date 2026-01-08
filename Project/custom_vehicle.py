@@ -7,30 +7,30 @@ class CustomVehicle(ts.Vehicle):
     def __init__(self, config={}):
         self.vehicle_type = config.get('vehicle_type', 'car')
         if self.vehicle_type == 'tram':
-            config['l'] = 10 # Long vehicle
+            config['l'] = 10 # longer vehicle
         super().__init__(config)
         self.init_obu_data()
 
     def init_obu_data(self):
-        # Engine Type
+        # engine type
         if self.vehicle_type == 'tram':
              self.engine_type = 'Tram/electric'
         else:
             engine_types = ['electric', 'combustion', 'hybrid', 'hydrogen']
             self.engine_type = random.choice(engine_types)
 
-        # AC Temperature
+        # ac temperature
         self.ac_temperature = random.uniform(18.0, 24.0)
 
-        # DaytimeRunningLights Status
+        # daytime running lights status
         self.DaytimeRunningLights = random.choice([True, False])
 
-        # Windshield Wipers Status
+        # windshield wipers status
         self.windshield_wipers = random.choice([True, False])
 
     def update(self, lead, dt):
         super().update(lead, dt)
-        # Update dynamic OBU data
+        # update obu data
         self.v = self.v
         
 class CustomVehicleGenerator(VehicleGenerator):

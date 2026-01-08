@@ -12,37 +12,37 @@ from custom_vehicle import CustomVehicleGenerator
 # transport buses, etc.) and material (e.g., asphalt, concrete, gravel, dirt, etc)
 
 # Add the possibility to assign a “mnemonic” identifier (i.e., a string) to the
-# road segments, to simply their handling and usage during the topology
+# road segments, to simply their handling and usage during the topologys
 # creation.
-# custom_window.py achieves this.
+# custom_window.py
 
 # Define new topologies featuring multiple segments and intersections (e.g.,
 # a simplified modeling of the Scientific Campus of UNIPR, a small district
 # of a real existing city, etc.).
-# create_topology.py achieves this.
+# create_topology.py
 
 # Introduce the possibility to define a “class” for the vehicles, then drawing
 # them with different color and/or shape on the basis of this additional
 # property (e.g., vehicle, truck, bus, military tank, electric vehicle, etc.).
-# custom_vehicle.py achieves this.
+# custom_vehicle.py
 
 # Include additional informations to be ideally managed by the OBUs present
 # on-board the vehicles (e.g., CO2 emissions, engine type (electric, 
 # combustion, hybrid, hydrogen, etc.), engine RPM, internal A/C temperature,
 # ambient light level, fog lights status, rain sensor detection, etc.).
-# custom_vehicle.py achieves this.
+# custom_vehicle.py
 
 # Define the possibility to show events (e.g., accidents, road construction
 # sites, etc.) happening at certain (randomly-selected and/or scheduled)
 # time instants and possibly (in the future) generating traffic congestion.
-# event_manager.py and event_vehicle.py achieves this.
+# event_manager.py and event_vehicle.py
 
 vg = CustomVehicleGenerator({
     'vehicles': [
-        (2, {'vehicle_type': 'car', 'v': 8, 'path': [2,3,4]}),   # Car: Up
-        (2, {'vehicle_type': 'car', 'v': 8, 'path': [5,6,7]}),  # Car: Down
-        (1, {'vehicle_type': 'tram', 'v': 10, 'path': [0]}),          # Tram: Up
-        (1, {'vehicle_type': 'tram', 'v': 10, 'path': [1]}),          # Tram: Down
+        (2, {'vehicle_type': 'car', 'v': 8, 'path': [2,3,4]}),   # car: up
+        (2, {'vehicle_type': 'car', 'v': 8, 'path': [5,6,7]}),  # car: down
+        (1, {'vehicle_type': 'tram', 'v': 10, 'path': [0]}),          # tram: up
+        (1, {'vehicle_type': 'tram', 'v': 10, 'path': [1]}),          # tram: down
     ]
 })
 

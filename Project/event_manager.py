@@ -53,15 +53,15 @@ class EventManager:
             'x': x
         })
         
-        # Add to simulation
+        # add to simulation
         self.simulation.add_vehicle(event)
         self.events.append(event)
         
-        # Remove from end (where add_vehicle put it)
+        # remove from end (where add_vehicle put it)
         if segment.vehicles[-1] == event.id:
             segment.vehicles.pop()
         
-        # Insert at correct position
+        # insert at correct position
         inserted = False
         for i, veh_id in enumerate(segment.vehicles):
             v = self.simulation.vehicles[veh_id]
@@ -72,21 +72,19 @@ class EventManager:
         
         if not inserted:
             segment.vehicles.append(event.id)
-            
-        print(f"Event spawned: {event_type} at Seg {segment_id}, Pos {x:.1f}")
+
 
     def remove_event(self, event):
         if event in self.events:
             self.events.remove(event)
-            # Remove from simulation
+            # remove from simulation
             if event.id in self.simulation.vehicles:
                 del self.simulation.vehicles[event.id]
             
-            # Remove from segment
+            # remove from segment
             if event.path:
                 seg_id = event.path[0]
                 segment = self.simulation.segments[seg_id]
                 if event.id in segment.vehicles:
                     segment.vehicles.remove(event.id)
             
-            print(f"Event expired: {event.event_type}")
